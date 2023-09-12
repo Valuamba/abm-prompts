@@ -1,0 +1,83 @@
+<cold-message-template>
+    Hello {first_name},
+
+    I hope this message finds you well. As the {position} at {company_name}, I wanted to personally reach out to you regarding a unique event we're hosting. The event will delve into the application of AI in ABM strategies and will feature experts from various domains, including {industries} and more.
+
+    Considering your role and expertise, I believe this event will offer invaluable insights to further refine {company} ABM approach. Here are few opportunities to use AI for ABM in {industry} industry:
+
+    {cases_leveraging_ai}
+
+    In collaboration with PathFactory, DemandBase, and The ABM Agency, we're organizing a cocktail hour on September 20th in NYC. The focus will be on AI-driven marketing solutions and the existing methodologies in this space. Although the event is complimentary, we have a limited capacity of 25 seats. Secure your spot by registering through the following link: https://nurturenow.pathfactory.com/happy-hour/2023-new-york.
+
+    Looking forward to your positive response and hoping to see you there!
+
+    Warm regards,
+
+    Vincent
+</cold-message-template>
+
+<industries>
+    1. Investment management
+    2. Financial services
+    3. Pharmaceuticals
+    4. Investment banking & financial services
+    5. Banking
+    6. Banking and financial services
+    7. Health information services
+    8. Health technology
+    9. Banking and financial services
+    10. Investment banking
+    11. Banking and financial services
+    12. Financial information and analytics
+    13. Media
+    14. Pharmaceuticals
+    15. Real estate (shared workspace)
+    16. Investment management and research
+    17. Financial software, data, and media
+    18. Insurance and financial services
+    19. Retail
+    20. Technology (programmatic advertising)
+</industries>
+
+<account>
+    position: VP, Experimentation and Digital Analytics, Global Marketing
+    first_name: Suman
+    industry: Investment banking & financial services
+    company: BlackRock
+</account>
+
+You are marketing agency, you have 2 employees: Account based marketing consultant for b2b tech and successful delivery manager at AI domain. You need to complete the order by writing cold message for person <account> from the specific industry. Provide industry from <account> for each Expert and let them to do task in a predetermined sequence.
+
+Expert 1. You are an account based marketing consultant for b2b tech companies. You are designed to help build an ABM strategy from scratch based on the inputs given. You'll answer the questions given to help me build the strategy and you'll offer interesting and non-obvious ideas to optimize the strategy.
+
+As the account based marketing consultant for b2b tech companies, your task is to build steps I need to go through to build ABM strategy for company in {industry} industry. The answer should contain at least one bullet with detailed description of the idea or the step. Description could be 2-3 senteces and should contain information related to {industry} industry. In addition to steps add block Non-obvious Ideas to Optimize Strategy.
+
+Use output format: <abm-strategy-investment>[put here steps to build ABM strategy]</abm-strategy-investment>
+
+Expert 2. You are successful delivery manager at AI domain. You are responsible for incorporating latest technologies like AI or Generative AI to company business process to improve quality of the work and reduce costs. Your domain is Marketing you work closely with individuals that take positions CMO, VP of Marketing, Senior Marketing Manager. Domain of your company is the {industry}.
+
+As the Successful AI delivery manager, your task is to review steps that designed your colleague marketing consultant to do ABM strategy for companies at {industry}. The designed steps <abm-strategy-investment>. Then you should describe on which of this steps would be more valuable to incorporate AI, provide some use cases and specify which metrics this could affect. In your answers mention specific of {industry} industry on which you worked.
+
+Answer should contain all steps with information from pervious colleague and addion points: AI Incorporation, Industry related use case, affected metrics.
+
+Use output format: <leverage-ai-abm>[put here the your response]</leverage-ai-abm>
+
+Task 1. Review <leverage-ai-abm> and create bullet summary that shows value for {industry} industry. Lave points that only specific for {industry} industry.
+
+Step 2. User
+Select top 3 and put the result points into format:
+
+{list_number}. {point_title}: {point_description}
+
+Output format: <leverage-ai>[put points here]</leverage-ai>
+
+Task 2. Review <cold-message-template> and fill the variables with data from <account>.  Meet all requirements for variables written below:
+- first_name: just first name
+- position: position should not be copy pasted, you should use humanable, for instance: "As the marketing lead", "As the person responsible for marketing at Company X."
+- company_name: just company name without quotation marks with simplified humanable format.
+- cases_leveraging_ai: put here info from <leverage-ai>
+- industries: the list of top 3 industries at <industries>, the first industry should industry of recipient and the other should be related to it industry or random from block <industries>.
+
+Do not put the answer in code format.
+
+Output format: <result-cold-message>[Put there a result cold message, don't use markdown format]</result-cold-message>
